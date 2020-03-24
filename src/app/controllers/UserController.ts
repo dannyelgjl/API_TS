@@ -29,6 +29,7 @@ class UserController {
     });
 
     console.log({
+      _id: req.params.id,
       nome: nome,
       idade: idade,
       email: email
@@ -39,6 +40,14 @@ class UserController {
       idade,
       email
     });
+  }
+
+  async delete(req: Request, res: Response): Promise<Response> {
+    const user = await User.findById({ _id: req.params.id });
+
+    await user?.remove();
+
+    return res.json('Usuário Deletado');
   }
 }
 
