@@ -1,8 +1,8 @@
-import express from "express";
-import routes from "./routes";
-import cors from "cors";
+import express from 'express';
+import routes from './routes';
+import cors from 'cors';
 
-import "./database";
+import './database';
 
 class App {
   public server: express.Application;
